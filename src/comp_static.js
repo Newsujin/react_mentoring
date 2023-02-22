@@ -1,72 +1,33 @@
 import styled from "styled-components";
-import static1 from "./static1.JPG"
-import static2 from "./static2.JPG"
-import static3 from "./static3.JPG"
-import static4 from "./static4.JPG"
+import static_img from "./image/general.png"
 
-const Comp1 = () => {
+const Comp = (Props) => {
 	return (
 		<>
-  	    	<Img_static src={static1} />
-			<Word> 프로젝트 </Word>
-		</>
-	);
-}
-
-const Comp2 = () => {
-	return (
-		<>
-        	<Img_static src={static2} />
-			<Word> 공부 </Word>
-		</>
-	);
-}
-
-const Comp3 = () => {
-	return (
-		<>
-			<Img_static src={static3} />
-			<Word> 42 </Word>
-		</>
-	);
-}
-
-const Comp4 = () => {
-	return (
-		<>
-		<Img_static src={static4} />
-			<Word> 취미 </Word>
+			<Img_static src={Props.img} />
+			<Word> {Props.txt} </Word>
 		</>
 	);
 }
 
 const StaticComp = () => {
 	return (
-		<>
 		<SortRow>
-			<Comp1 />
-			<Comp2 />
+			<Comp img={static_img} txt={"text"} />
+			<Comp img={static_img} txt={"text"} />
+			<Comp img={static_img} txt={"text"} />
+			<Comp img={static_img} txt={"text"} />
 		</SortRow>
-
-		<SortRow>
-			<Comp3 />
-			<Comp4 />
-		</SortRow>
-		</>
 	);
 }
-
-const SortCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-`;
 
 const SortRow = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 100px;
+  margin: 50px 100px;
+  padding: 0 50px 0 0;
 `;
 
 const Img_static = styled.img`
@@ -75,11 +36,11 @@ const Img_static = styled.img`
 `;
 
 const Word = styled.p`
-	font-size: 30px;
-	color: blue;
+	font-size: 20px;
+	color: black;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-evenly;
 `;
 
 export default StaticComp;
