@@ -1,38 +1,42 @@
 import styled from "styled-components";
-import general from "./image/general.png"
+import general from "../image/general.png"
 
 const Comp = (Props) => {
 	return (
-		<SortCol>
+		<Block>
 			<Img_gen src={Props.img} />
 			<p> {Props.txt} </p>
-		</SortCol>
+		</Block>
 	);
 }
 
 const GenComp = () => {
 	return (
 		<SortRow>
-			<Comp img={general} txt={"0"}/>
+			<Comp img={general} txt={"1"}/>
 			<Comp img={general} txt={"2"}/>
 			<Comp img={general} txt={"3"}/>
 			<Comp img={general} txt={"4"}/>
+			<Comp img={general} txt={"5"}/>
+			<Comp img={general} txt={"6"}/>
 		</SortRow>
 	);
 }
 
 const SortRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end; //글씨 정렬
-  /* flex-wrap: wrap; //왜 이상해지는가 */
-  /* padding: 200px; */
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	margin: 0 0 0 100px;
 `;
 
-const SortCol = styled.div` //세로 정렬
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; //변화가 왜 없을까요
+const Block = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin: 0 50px;
+	/* height: 100px; */
 `;
 
 const Img_gen = styled.img`
